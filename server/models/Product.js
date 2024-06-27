@@ -1,5 +1,5 @@
 import { DataTypes } from "sequelize";
-import { sequelize } from "../config/db.js";
+import { sequelize } from "../DB/db.js";
 import User from "./User.js";
 
 const Product = sequelize.define(
@@ -28,4 +28,4 @@ const Product = sequelize.define(
 Product.belongsTo(User, { as: "farmer", foreignKey: "farmerId" });
 User.hasMany(Product, { foreignKey: "farmerId" });
 
-module.exports = Product;
+export default Product;
