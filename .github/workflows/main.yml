@@ -26,8 +26,8 @@ jobs:
       - name: Login to Docker hub
         uses: docker/login-action@v3
         with:
-          username: ${{DOCKER_USR}}
-          password: ${{DOCKER_PWD}}
+          username: ${{secrets.DOCKER_USR}}
+          password: ${{secrets.DOCKER_PWD}}
 
       - name: Install NodeJS app and Linting test
         run: |
