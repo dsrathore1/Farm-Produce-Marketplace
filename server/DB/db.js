@@ -3,12 +3,12 @@ import { config } from "dotenv";
 
 config();
 
-const sequelize = new Sequelize(process.env.PG_URI, {
-  dialect: "postgres",
+export const sequelize = new Sequelize(process.env.PG_URI, {
+  database: "postgres",
   logging: false,
 });
 
-const connectDB = async () => {
+export const connectDB = async () => {
   try {
     await sequelize.authenticate();
     console.log("Database connected to :", sequelize.getDatabaseName());
@@ -17,5 +17,3 @@ const connectDB = async () => {
     process.exit(1);
   }
 };
-
-export { sequelize, connectDB };
