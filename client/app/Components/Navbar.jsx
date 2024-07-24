@@ -14,22 +14,22 @@ const Navbar = () => {
         </div>
 
         {/* Navbar links  */}
-        <div className="flex list-none gap-x-2 justify-center items-center">
+        <div className="flex list-none gap-x-2 justify-center items-center transition-all ease-in-out duration-200">
           <li className="w-[8rem] text-center py-2 text-lg font-bold">
             <Link className="" href="/">
               Home
             </Link>
           </li>
-          <li className="w-[8rem] text-center py-2 text-sm font-light hover:text-lg hover:font-bold">
+          <li className="w-[8rem] text-center py-2 duration-300 transition-all ease-in-out text-sm font-light hover:text-lg hover:font-bold">
             <Link href="/products">Products</Link>
           </li>
-          <li className="w-[8rem] text-center py-2 text-sm font-light hover:text-lg hover:font-bold">
+          <li className="w-[8rem] text-center py-2 duration-300 transition-all ease-in-out text-sm font-light hover:text-lg hover:font-bold">
             <Link href="/about">About</Link>
           </li>
-          <li className="w-[8rem] text-center py-2 text-sm font-light hover:text-lg hover:font-bold">
+          <li className="w-[8rem] text-center py-2 duration-300 transition-all ease-in-out text-sm font-light hover:text-lg hover:font-bold">
             <Link href="/contact">Contacts</Link>
           </li>
-          <li className="w-[8rem] text-center py-2 text-sm font-light hover:text-lg hover:font-bold">
+          <li className="w-[8rem] text-center py-2 duration-300 transition-all ease-in-out text-sm font-light hover:text-lg hover:font-bold">
             <Link href="/carts">Carts</Link>
           </li>
         </div>
