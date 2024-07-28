@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: false }));
 
 //! Home Route
 app.get("/", (req, res) => {
-  res.send("<h1 align='center'>Welcome to Farm Marketplace</h1>");
+  res.send("<h1 align='center'>Welcome to Farm Marketplace Backend</h1>");
 });
 
 app.use("/api/auth", authRoutes);
