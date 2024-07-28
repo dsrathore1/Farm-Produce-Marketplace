@@ -1,0 +1,59 @@
+volumes:
+  db-vol:
+
+services:
+  database:
+    image: "postgres"
+    container_name: "Database"
+
+    volumes:
+      - db-vol:/var/lib/postgresql/data
+
+    ports:
+      - 5432:5432
+
+    env_file:
+      - .env
+
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USR}
+      POSTGRES_PASSWORD: ${POSTGRES_PWD}
+
+  backend:
+    image: fradriks/fp-server:v1
+    container_name: Backend
+
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+
+    volumes:
+      - .:/app
+
+    ports:
+      - 4000:4000
+
+    env_file:
+      - .env
+
+    depends_on:
+      - database
+
+  frontend:
+    image: fradriks/fp-client
+    container_name: Frontend
+
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+
+    volumes:
+      - .:/app
+
+    ports:
+      - 3000:3000
+
+    depends_on:
+      - database
+      - backend

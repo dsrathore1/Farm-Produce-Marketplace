@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+  name: fp-frontend
+  labels:
+    app: client
+
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: fp-client-pod
+
+  template:
+    metadata:
+      labels:
+        app: fp-client-pod
+
+    # spec:
+    containers:
+      - name: client-container
+        image: fradriks/fp-client
+        ports:
+          - name: frontend-port
+            containerPort: 3000
+            protocol: TCP

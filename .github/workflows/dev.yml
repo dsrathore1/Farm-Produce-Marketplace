@@ -1,10 +1,10 @@
-name: Farm Product's main branch
-run-name: Workflow number ${{github.run_number}} - Main
+name: Farm Product's development branch
+run-name: Workflow number ${{github.run_number}} - Dev
 
 on:
   push:
     branches:
-      - "main"
+      - "dev"
 
 jobs:
   frontend:
